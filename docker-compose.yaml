@@ -1,0 +1,17 @@
+services:
+  soulmask:
+    build: .
+    environment:
+      - server_name: "SuperServer"
+      - max_players: 10
+      - user_pass: userpassword
+      - admin_pass: adminpassword
+      - mode: pve # or pvp
+      - port: 8777
+      - steamport: 27015
+      - echoport: 18888
+    volumes:
+      - ./saved:/home/server/soulmask_server/WS/Saved
+    ports:
+      - 27015:27015/udp
+      - 8777:8777/udp
